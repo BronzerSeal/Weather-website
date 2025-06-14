@@ -1,0 +1,92 @@
+:root {
+  --primary: #11998e;
+  --secondary: #38ef7d;
+  --white: #fff;
+  --gray: #9b9b9b;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #222222;
+}
+
+/* Обертка формы */
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+/* Поле ввода */
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none; /* убираем стандартную границу */
+  border-bottom: 2px solid var(--gray);
+  outline: none; /* убираем outline */
+  font-size: 1.3rem;
+  color: var(--white);
+  padding: 7px 0;
+  background: transparent;
+
+  /* Плавное изменение границы при фокусе */
+  transition: border-color 0.2s, border-width 0.2s, border-image-source 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent; /* делаем placeholder прозрачным */
+}
+
+/* Когда placeholder показан (пустое поле) */
+.form__field::placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px; /* позиция лейбла по умолчанию */
+}
+
+/* Лейбл формы */
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+/* Стиль при фокусе на поле */
+.form__field:focus {
+  border-width: 3px; /* увеличиваем толщину границы */
+
+  /* Меняем стиль лейбла при фокусе */
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: -20px; /* поднимаем лейбл вверх (можете подстроить) */
+  font-size: 0.9rem; /* чуть меньше размера по умолчанию */
+  color: var(--primary);
+  font-weight: bold;
+
+  /* Можно добавить трансформацию для плавного движения, например:
+       transform: translateY(-20px);
+       и в .form__label добавить transition для transform
+     */
+}
+
+/* Убираем тень у невалидных и обязательных полей (чтобы не мешали) */
+.form__field:-webkit-autofill,
+.form__field:-webkit-autofill:hover,
+.form__field:-webkit-autofill::first-line,
+.form__field:-webkit-autofill::after,
+.form__field:-webkit-autofill::before {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -webkit-text-fill-color: #fff !important;
+}

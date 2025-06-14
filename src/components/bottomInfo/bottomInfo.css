@@ -1,0 +1,30 @@
+.bottom-top-info-weather {
+  color: white;
+  font-weight: lighter;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-top-info-gradus {
+  color: white;
+  font-weight: lighter;
+  font-size: 75px;
+  margin: 0;
+  padding: 0;
+}
+
+.Weather-Point-Container {
+  display: flex;
+  flex-direction: row;
+}
+
+.weather-point-day {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.weather-point {
+  margin: 10px;
+}
