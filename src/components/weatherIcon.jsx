@@ -5,7 +5,7 @@ import MoonIcon from "../img/night/Clear.png";
 import NightLightRain from "../img/night/Light rain.png";
 import NightCloudy from "../img/night/Cloudy.png";
 
-const WeatherIcon = ({ cityWeather, is_day }) => {
+const WeatherIcon = ({ cityWeather, is_day, onClick }) => {
   let icon;
   if (is_day) {
     if (cityWeather === "Sunny") {
@@ -26,7 +26,9 @@ const WeatherIcon = ({ cityWeather, is_day }) => {
   }
 
   return (
-    <img src={icon} style={{ width: "200px", marginBottom: "10px" }} alt="" />
+    <div onClick={onClick} style={{ cursor: "pointer" }}>
+      <img src={icon} style={{ width: "200px", marginBottom: "10px" }} alt="" />
+    </div>
   );
 };
 
